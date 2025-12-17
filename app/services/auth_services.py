@@ -1,11 +1,11 @@
 from jose import jwt , JWTError
 from dotenv import load_dotenv
-from db.models.user import User
+from app.db.models.user import User
 from datetime import datetime , timedelta
 import os
 from fastapi.security import HTTPAuthorizationCredentials , HTTPBearer
 from fastapi import Depends , HTTPException , status
-from api.v1.dependencies import get_db
+from app.api.v1.dependencies import get_db
 load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY')
