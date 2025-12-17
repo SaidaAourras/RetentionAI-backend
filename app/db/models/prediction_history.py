@@ -15,8 +15,8 @@ class Prediction_history(Base):
     user_id = Column(Integer , ForeignKey("users.id"))
     employee_id = Column(Integer , ForeignKey("employees.id"), unique=True)
     
-    user = relationship("User" , back_populates='predictions_history')
-    employee = relationship("Employee" , back_populates="predictions_history")
+    user = relationship("User" , back_populates='prediction_history')
+    employee = relationship("Employee" , back_populates="prediction_history")
     
    
     
