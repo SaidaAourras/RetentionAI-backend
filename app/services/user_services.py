@@ -24,7 +24,7 @@ def verify_user_is_exists(user , db):
     user_query = db.query(User).filter(User.email == user.email).first()
     
     if user_query :
-        return True
+        return user_query
     else:
-        return False
+        return 
     
