@@ -1,6 +1,8 @@
 from pydantic import BaseModel , EmailStr
 from datetime import datetime
 
+# Register
+
 class UserBase(BaseModel):
     username: str
     email: EmailStr
@@ -15,3 +17,13 @@ class UserResponse(UserBase):
     class Config:
         from_attributes = True
         
+# login
+
+class LoginRequest(BaseModel):
+    email: EmailStr
+    password: str
+    
+    
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str = 'bearer'
