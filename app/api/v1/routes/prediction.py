@@ -29,7 +29,7 @@ def predict_Attrition(employee:EmployeBase , db: Session = Depends(get_db) , cur
     employee_df = pd.DataFrame([employee_dict])
     
     prediction = model.predict_proba(employee_df)
-    probability = round(float(prediction[0,1]),2) * 100app/api/v1/routes/prediction.py
+    probability = round(float(prediction[0,1]),2) * 100
     
     
     new_employee = create_employee(employee , db)
