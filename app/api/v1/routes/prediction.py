@@ -8,6 +8,8 @@ import pandas as pd
 from app.db.models.employee import Employee
 from app.db.models.user import User
 from app.db.models.prediction_history import Prediction_history
+from app.services.employee_services import create_employee
+from app.services.history_prediction_services import create_history
 
 
 
