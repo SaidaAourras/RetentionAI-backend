@@ -28,3 +28,16 @@ def create_token(payload):
     
     token = jwt.encode(to_encode , SECRET_KEY)
     return token
+
+
+def verify_token(credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme), db=Depends(get_db)):
+    token = credentials.credentials
+    
+    try:
+        payload = jwt.decode(token , SECRET_KEY )
+        return payload
+    except JWTError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="token invalide ou expire",
+        )
