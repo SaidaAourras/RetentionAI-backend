@@ -1,5 +1,5 @@
 from .base import Base
-from sqlalchemy import Column , Integer , ForeignKey  , DateTime
+from sqlalchemy import Column , Integer , ForeignKey  , DateTime , Float
 from datetime import datetime
 from sqlalchemy.orm import relationship 
 
@@ -9,7 +9,7 @@ class Prediction_history(Base):
     __tablename__ = 'predictions_history'
     
     id = Column(Integer , primary_key=True , index=True)
-    probability = Column(Integer)
+    probability = Column(Float)
     createdAt = Column(DateTime , default= datetime.utcnow)
     
     user_id = Column(Integer , ForeignKey("users.id"))
