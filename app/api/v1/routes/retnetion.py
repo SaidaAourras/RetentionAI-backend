@@ -18,6 +18,7 @@ retention_router = APIRouter(prefix='/retention', tags=['Retention'])
 @retention_router.post('/generate-retention-plan')
 def predict_Attrition(requestRetention : RetentionBase , db: Session = Depends(get_db) , current_user : dict  = Depends(verify_token)):
     
+    
     user_id = current_user.get("sub")
     
     if not user_id:
