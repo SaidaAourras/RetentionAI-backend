@@ -194,7 +194,7 @@ Tâche : propose 3 actions concrètes et personnalisées pour le retenir.
 
 1. **Cloner le repository**
 ```bash
-git clone https://github.com/votre-org/retentionai-backend.git
+git clone https://github.com/SaidaAourras/RetentionAI-backend.git
 cd retentionai-backend
 ```
 
