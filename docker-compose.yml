@@ -2,7 +2,7 @@ services:
 # ------------------- Base de donnees Postgress ---------------
     db:
       image: postgres:15
-      container_name: Hybrid-Analyzer_db
+      container_name: retentionAI_db
       restart: always
       environment: 
         POSTGRES_USER: postgres
@@ -34,10 +34,7 @@ services:
           - app-RetentionAI-network
 # ------------------- Frontend Next.js -----------------
     frontend:
-      build: 
-        context: ../retentionai-frontend
-        args:
-          NEXT_PUBLIC_API_URL: http://localhost:8000
+      build: ../retentionai-frontend
       container_name: retentionAI_frontend
       ports:
         - "3000:3000"
