@@ -1,12 +1,15 @@
-pandas
-numpy
+numpy==1.26.4
+pandas==2.1.4
+scikit-learn==1.4.2
+imbalanced-learn==0.12.3
+
 matplotlib
-scikit-learn
+
 fastapi
 uvicorn[standard]
 sqlalchemy
 pydantic
-dotenv
+python-dotenv
 pytest
 psycopg2-binary
 requests
@@ -16,5 +19,5 @@ pyjwt
 pwdlib[argon2]
 huggingface_hub
 google-genai
-imblearn
 pytest-mock
+pydantic[email]
