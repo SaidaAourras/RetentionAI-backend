@@ -25,50 +25,65 @@ Le système combine un modèle de Machine Learning supervisé pour prédire le r
 
 ```
 retentionai-backend/
-├── app/
-│   ├── api/v1/
-│   │   └── routes/
-│   │       ├── auth.py              # Authentification JWT
-│   │       ├── prediction.py        # Endpoint ML
-│   │       └── retention.py         # Génération plans de rétention
-│   ├── core/
-│   │   ├── cors.py                  # Configuration CORS
-│   │   └── __init__.py
-│   ├── db/
-│   │   └── models/
-│   │       ├── base.py              # Base SQLAlchemy
-│   │       ├── employee.py          # Modèle Employee
-│   │       ├── prediction_history.py
-│   │       └── user.py              # Modèle User
-│   ├── schemas/
-│   │   ├── employee.py              # Schémas Pydantic
-│   │   ├── prediction.py
-│   │   ├── retention.py
-│   │   └── user.py
-│   ├── services/
-│   │   ├── auth_services.py         # Logique authentification
+├── 📂 app/
+│   ├── 📂 api/
+│   │   └── 📂 v1/
+│   │       ├── 📂 routes/
+│   │       │   ├── auth.py
+│   │       │   ├── prediction.py
+│   │       │   └── retention.py
+│   │       ├── 📂 schemas/
+│   │       │   ├── employee.py
+│   │       │   ├── prediction.py
+│   │       │   ├── retention.py
+│   │       │   └── user.py
+│   │       └── dependencies.py  ⭐ (Dépendances API)
+│   ├── 📂 core/
+│   │   ├── __init__.py
+│   │   └── cors.py
+│   ├── 📂 db/
+│   │   ├── 📂 models/
+│   │   │   ├── __init__.py
+│   │   │   ├── base.py
+│   │   │   ├── employee.py
+│   │   │   ├── prediction_history.py
+│   │   │   └── user.py
+│   │   └── database.py
+│   ├── 📂 services/
+│   │   ├── __init__.py
+│   │   ├── auth_services.py
 │   │   ├── employee_services.py
 │   │   ├── history_prediction_services.py
-│   │   ├── retention_services.py    # Intégration LLM
+│   │   ├── retention_services.py
 │   │   └── user_services.py
-│   └── dependencies.py              # Dépendances FastAPI
-├── data/
-│   └── data.csv                     # Dataset RH
-├── models/
-│   └── logistic_regression_model.pkl # Modèle ML entraîné
-├── notebooks/
-│   ├── eda.ipynb                    # Analyse exploratoire
-│   ├── preprocessing.ipynb          # Préparation des données
-│   └── preprocessing_smote.ipynb    # Gestion déséquilibre
-├── tests/
-│   ├── test_gemini_mock.py          # Tests API LLM
-│   └── test_model.py                # Tests modèle ML
-├── utils/
-│   └── main.py                      # Point d'entrée FastAPI
+│   ├── 📂 tests/  ⭐ (Tests de l'application)
+│   │   ├── __init__.py
+│   │   ├── test_gemini_mock.py
+│   │   └── test_model.py
+│   ├── 📂 utils/  ⭐ (Utilitaires de l'application)
+│   │   ├── __init__.py
+│   │   └── hashing.py
+│   └── main.py  ⭐ (Point d'entrée FastAPI)
+│
+├── 📂 ml/  ⭐ (Module Machine Learning)
+│   ├── 📂 data/
+│   │   └── data.csv
+│   ├── 📂 models/
+│   │   └── logistic_regression_model.pkl
+│   └── 📂 notebooks/
+│       ├── eda.ipynb
+│       ├── preprocessing_smote.ipynb
+│       └── preprocessing.ipynb
+│
+├── 📂 venv/
+├── .env
+├── .env.docker
+├── .gitignore
+├── .dockerignore  ⭐ (Exclusions Docker)
 ├── docker-compose.yml
 ├── Dockerfile
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ## 🚀 Fonctionnalités
