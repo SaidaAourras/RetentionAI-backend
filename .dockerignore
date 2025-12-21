@@ -1,0 +1,10 @@
+notebooks/
+data/
+tests/
+*.ipynb
+*.csv
+__pycache__/
+*.pyc
+.git/
+.env
+venv/
